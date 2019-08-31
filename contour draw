@@ -1,0 +1,5 @@
+CONTOUR:filmcooling effe endwall
+  Colour Variable = yita
+  Location List = endwall
+  Value List = 0,1
+END
