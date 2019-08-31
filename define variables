@@ -1,0 +1,22 @@
+LIBRARY:
+  CEL:
+    EXPRESSIONS:
+      yitae = (Temperature-298.15[K])/(343.15[K]-298.15[K])
+    END
+  END
+END
+
+EXPRESSION EVALUATOR:
+  Evaluated Expression = yitae
+END
+
+> forceupdate EXPRESSION EVALUATOR
+
+USER SCALAR VARIABLE:yita
+  Boundary Values = Conservative
+  Calculate Global Range = Off
+  Expression = yitae
+  Recipe = Expression
+  Variable to Copy = Pressure
+  Variable to Gradient = Pressure
+END
