@@ -1,0 +1,86 @@
+#简洁
+STREAMLINE:slotinlet3dstreamline
+Colour Mode = Use Plot Variable
+Colour Variable = Velocity
+  Line Width = 1
+  Location List = slotinlet
+  Number of Samples = 25
+  Number of Sides = 8
+  Streamline Type = 3D Streamline
+  Streamline Width = 2
+  Surface Drawing = Smooth Shading
+Variable = Velocity
+END
+
+#完整
+
+
+STREAMLINE:slotinlet3dstreamline
+  Absolute Tolerance = 0.0 [m]
+  Apply Instancing Transform = On
+  Colour = 0.75, 0.75, 0.75
+  Colour Map = Default Colour Map
+  Colour Mode = Use Plot Variable
+  Colour Scale = Linear
+  Colour Variable = Velocity
+  Colour Variable Boundary Values = Conservative
+  Cross Periodics = On
+  Culling Mode = No Culling
+  Domain List = /DOMAIN GROUP:All Domains
+  Draw Faces = On
+  Draw Lines = Off
+  Draw Streams = On
+  Draw Symbols = Off
+  Grid Tolerance = 0.01
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Lighting = On
+  Line Width = 1
+  Location List = slotinlet
+  Locator Sampling Method = Equally Spaced
+  Max = 0.0 [m s^-1]
+  Maximum Number of Items = 25
+  Min = 0.0 [m s^-1]
+  Number of Samples = 25
+  Number of Sides = 8
+  Range = Global
+  Reduction Factor = 1.0
+  Reduction or Max Number = Max Number
+  Sample Spacing = 0.1
+  Sampling Aspect Ratio = 1
+  Sampling Grid Angle = 0 [degree]
+  Seed Point Type = Equally Spaced Samples
+  Simplify Geometry = Off
+  Specular Lighting = On
+  Stream Drawing Mode = Tube
+  Stream Initial Direction = 0 , 0 , 0
+  Stream Size = 1.0
+  Streamline Direction = Forward
+  Streamline Maximum Periods = 20
+  Streamline Maximum Segments = 10000
+  Streamline Maximum Time = 0.0 [s]
+  Streamline Type = 3D Streamline
+  Streamline Width = 2
+  Surface Drawing = Smooth Shading
+  Surface Streamline Direction = Forward and Backward
+  Tolerance Mode = Grid Relative
+  Transparency = 0.0
+  Variable = Velocity
+  Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
