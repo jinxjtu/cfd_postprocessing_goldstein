@@ -6,11 +6,7 @@ LIBRARY:
   END
 END
 
-EXPRESSION EVALUATOR:
-  Evaluated Expression = yitae
-END
 
-> forceupdate EXPRESSION EVALUATOR
 
 USER SCALAR VARIABLE:yita
   Boundary Values = Conservative
