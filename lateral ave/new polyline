@@ -1,0 +1,44 @@
+
+
+#shortest version
+
+
+
+#full version
+POLYLINE:Polyline 1
+  Apply Instancing Transform = On
+  Boundary List = endwall
+  Colour = 0, 1, 0
+  Colour Map = Default Colour Map
+  Colour Mode = Constant
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Hybrid
+  Contour Level = 1
+  Domain List = /DOMAIN GROUP:All Domains
+  Input File =
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Line Width = 2
+  Location = /PLANE:Plane 1
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Option = Boundary Intersection
+  Range = Global
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
