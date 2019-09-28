@@ -1,7 +1,11 @@
-
+%% new polylines
 
 #shortest version
-
+POLYLINE:Polyline 3
+  Boundary List = endwall
+  Location = /PLANE:Plane 7
+  Option = Boundary Intersection
+END
 
 
 #full version
