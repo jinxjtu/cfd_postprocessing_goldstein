@@ -1,0 +1,11 @@
+VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Rotation
+    Pivot Point = 0.0393824, -0.0438078, 0.01
+    Scale = 96.4962
+    Pan = 0, 0
+    Rotation  = -90,-52,0
+  END
+
+END
