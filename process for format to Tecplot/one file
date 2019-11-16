@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 14 23:51:20 2019
+
+@author: jinjinli
+"""
+import csv
+import numpy as np
+
+path='/Users/jinjinli/Downloads/'
+name1='b.csv'
+suffix1='csv'
+suffix2='dat'
+filename=path+name
+# 打开文件
+data_test=[]
+with open(filename, 'r+') as csv_file:
+    reader = csv.reader(csv_file)
+    for row in reader:
+        data_test.append(row)
+
+
+"""
+查找定位,l是行数，不是序号，序号-1
+"""
+l=0
+m=0
+n=0
+o=0       
+for row in data_test:
+    l+=1
+    if '[Name]' in row :
+            m=l
+    elif '[Data]' in row:
+            n=l
+    elif '[Faces]' in row:
+            o=l
+    else:
+            continue
+
+"""
+操作数据
+"""
+
+
+
+"""
+sum_total为新文件总行数(注意不是序号数，序号数减1),l包含最后一个空行,通过给sumtotal减去1实现去掉最后一个空行
+"""
+sum_total=l-5
+f=o-n-3
+e=l-o-1
+new=[]
+i=0
+"""
+i为新列表行数控制变量
+"""
+
+while i<(o-n-1-2+3):
+    """
+    1是data下有一行字符串 ， 2 为 faces有1个空行应减去2，3为新文件中有三行字符串
+    """
+    if i== 0:
+       new.append(['"TITTLE = '+filename+' "'])
+    elif i==1:
+       new.append(['VARIABLES = '+'"'+data_test[n][0]+'"'+' "'+data_test[n][1]+'"'+' "'+data_test[n][2]\
+                   +'"'+' "'+data_test[n][3]+'"'+' "'+data_test[n][4]+'"'])
+    elif i==2:
+       new.append(['ZONE '+ 'T="'+data_test[m][0]+'", '+'N= '+str(f)+', '+'E= '+str(e)+',DATAPACKING=POINT, ZONETYPE=FEQUADRILATERAL'])
+       
+    else:
+       new.append(data_test[i+3])
+    i+=1
+
+new.append([])
+i+=1
+sum_temp=i
+
+"""
+空一行写面信息,面信息每个数字+1，需要列表转数组，再转列表
+"""
+
+for i in range(sum_temp,sum_total):
+     arraylist=list(map(eval,data_test[i+4]))
+     array=np.array(arraylist)
+     arrayplus=[1,1,1,1]
+     array=array+arrayplus
+     array_list=array.tolist()
+     arraylist= [str(j) for j in array_list]
+     new.append(arraylist)
+     
+     
+
+ 
+    
+    
+"""
+将列表写入文件
+"""
+file = open('/Users/jinjinli/Downloads/test.dat', 'w+',encoding='UTF-8')  
+for p in range(len(new)):
+    if p==2:
+       s = ' '.join(new[p])
+       s = s.replace("'",'') +'\n' 
+       file.write(s)
+    else:
+        s = ' '.join(new[p])
+        """
+        将元素用空格链接
+        """
+        s = s.replace("'",'').replace(',','') +'\n' 
+        """
+        用空格代替上逗号和下逗号
+        """
+        file.write(s)
+file.close()
+
+"""
+for line in data_test:
+    j+=1
+    list_len_hint =len(line)
+    for rwo in line:
+        i+=1
+        if i==list_len_hint:
+           new_fo.write(str(line[i])+'/n')
+        else:
+           new_fo.write(str(line[i]))
+           
+new_fo.close()
+"""
+
+
+"""   
+        s = str(data_test[p]).replace('[','').replace(']','')#去除[],这两行按数据不同，可以选择
+        s = s.replace("'",'').replace(',','') +'\n'   #去除单引号，逗号，每行末尾追加换行符       
+"""
+
+
+    
