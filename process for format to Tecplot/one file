@@ -9,9 +9,8 @@ import csv
 import numpy as np
 
 path='/Users/jinjinli/Downloads/'
-name1='b.csv'
-suffix1='csv'
-suffix2='dat'
+name='b.csv'
+
 filename=path+name
 # 打开文件
 data_test=[]
