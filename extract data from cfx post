@@ -1,7 +1,8 @@
 ##read data location from txt file
 
-path = 
-
+path='C:\Users\li001252\Desktop\extract data';
+filename='datamatrix.xls';
+pointsmatrix=xlsread(filename);
 
 
 #new points
